@@ -26,3 +26,23 @@ while secondnumber < 4000000:
         sum += secondnumber
     firstnumber,secondnumber = secondnumber,firstnumber+secondnumber
 print(sum)
+
+'''
+The prime factors of 13195 are 5, 7, 13 and 29.
+
+What is the largest prime factor of the number 600851475143 ?
+'''
+
+#This function will find the maximum prime factor.
+def largestprimefactor(number):
+    factor = 2
+    while factor * factor <= number:
+        while number % factor == 0:
+            number /= factor
+        factor += 1
+    if (number > 1):
+        return number
+    return factor
+#This will print the largest prime factor for the number 600851475143
+#This can be changed to accomodate for any number 
+print largestprimefactor(600851475143)
