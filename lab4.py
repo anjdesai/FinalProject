@@ -46,3 +46,18 @@ def largestprimefactor(number):
 #This will print the largest prime factor for the number 600851475143
 #This can be changed to accomodate for any number 
 print largestprimefactor(600851475143)
+
+'''
+A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+Find the largest palindrome made from the product of two 3-digit numbers.
+'''
+
+Largest3Palindrome = 0
+    #This makes sure that the palindrome is only made from two 3-digit numbers
+for x in range (100,999):
+    for y in range (100, 999):
+        palindrome = x * y
+        if str(palindrome) == str(palindrome)[::-1]:
+            if palindrome > Largest3Palindrome:
+                Largest3Palindrome = palindrome
+print(Largest3Palindrome)  
