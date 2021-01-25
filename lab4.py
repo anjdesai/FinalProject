@@ -3,10 +3,13 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 
 Find the sum of all the multiples of 3 or 5 below 1000.
 '''
-
+#sets the sum to 0
 finalsum = 0
+#sets the range 
 for x in range(1000):
+    #this will find the multiples of 3 and 5 in the range 
     if (x%3 == 0 or x%5 == 0):
+        #this adds it to the final sum 
         finalsum = finalsum+x
 print (finalsum)
 
@@ -21,7 +24,9 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 firstnumber = 1
 secondnumber = 1
 sum = 0
+#setting 4,000,000 as max 
 while secondnumber < 4000000:
+    #to find only even value numbers 
     if secondnumber % 2 ==0:
         sum += secondnumber
     firstnumber,secondnumber = secondnumber,firstnumber+secondnumber
@@ -83,3 +88,29 @@ startnum = 1
 while divisible(startnum) == False:
     startnum += 1
 print(startnum) 
+
+
+'''
+The sum of the squares of the first ten natural numbers is 1^2 + 2^2 + ... + 10^2 =385
+
+The square of the sum of the first ten natural numbers is (1 + 2 + ... + 10)^2 = 55^2 = 3025
+
+Hence the difference between the sum of the squares of the first 
+ten natural numbers and the square of the sum is 3025 - 385 = 2640
+
+Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+    
+'''
+#I acknowledge Joey Silva for helping me understand the function of "nums.extend" 
+
+#creates a list with numbers 1 to 100
+nums = []
+nums.extend(range(1,101))
+#this squares the numbers in the list above
+squarednums = [number ** 2 for number in nums]
+squaredsum = sum(squarednums)
+sumsquared = sum(nums) **2
+#find the difference between the two values 
+finalnum = sumsquared - squaredsum
+print(finalnum)
+
