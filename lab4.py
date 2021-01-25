@@ -68,4 +68,18 @@ print(Largest3Palindrome)
 
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 '''
-
+#this helper function will see if numbers 1-20
+def divisible(num):
+    #goes through number 1-20
+    for x in range(1,20):
+        if num % x == 0:
+            #the break function will move on to the next number 
+            pass
+        else:
+            return False 
+    return True 
+#starts at number 1 then goes through the numbers in the range (1-20)
+startnum = 1
+while divisible(startnum) == False:
+    startnum += 1
+print(startnum) 
